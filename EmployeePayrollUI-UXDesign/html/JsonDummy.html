@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.ajax({
+
+                    type: 'GET',
+                    url: 'http://localhost:3000/employeesData',
+                    success: function (res) {
+                        console.log(res)
+
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    }
+                });
+            });
+        });       
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button1").click(function () {
+                $.ajax({
+
+                    type: 'POST',
+                    url: 'http://localhost:3000/employeesData',
+                    success: function (res) {
+                        console.log(res)
+
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    }
+                });
+            });
+        });       
+    </script>
+
+</head>
+<body>
+    <button type="button">Show Emp</button>
+    <button type="button1">Add Emp</button>
+</body>
+</html>
